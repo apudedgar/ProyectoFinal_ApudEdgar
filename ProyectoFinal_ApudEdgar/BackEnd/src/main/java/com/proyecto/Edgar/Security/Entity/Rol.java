@@ -2,10 +2,9 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
-
 package com.proyecto.Edgar.Security.Entity;
 
-import com.proyecto.Edgar.Security.Enunce.RolNombre;
+import com.proyecto.Edgar.Security.Enums.RolNombre;
 import javax.persistence.Entity;
 import javax.persistence.EnumType;
 import javax.persistence.Enumerated;
@@ -17,11 +16,13 @@ import javax.validation.constraints.NotNull;
 @Entity
 public class Rol {
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @GeneratedValue(strategy=GenerationType.IDENTITY)
     private int id;
     @NotNull
-    @Enumerated (EnumType.STRING)
+    @Enumerated(EnumType.STRING)
     private RolNombre rolNombre;
+    
+    //Constructor
 
     public Rol() {
     }
@@ -29,8 +30,7 @@ public class Rol {
     public Rol(RolNombre rolNombre) {
         this.rolNombre = rolNombre;
     }
-    
-    //Getter y Setter
+    //Getters y Setters
 
     public int getId() {
         return id;
@@ -48,6 +48,4 @@ public class Rol {
         this.rolNombre = rolNombre;
     }
     
-    
 }
-

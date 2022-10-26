@@ -11,19 +11,29 @@
       <div class="fadeIn first">
           <i class="usericon fa fa-user-circle fa-5x" aria-hidden="true"></i>
       </div>
+      <div>
   
       <!-- Login Form -->
-      <form>
-        <input type="text" id="login" class="fadeIn second" name="login" placeholder="login">
-        <input type="text" id="password" class="fadeIn third" name="login" placeholder="password">
-        <input type="submit" class="fadeIn fourth" value="Log In">
+      <form  #f="ngForm" (ngSubmit)="onLogin()" novalidate>
+     
+        <input type="text" id="nombreUsuario" name="nombreUsuario" 
+        class="fadeIn second" placeholder="nombreUsuario"
+        [(ngModel)]="nombreUsuario" required />
+
+        <input type="text" id="password" class="fadeIn third" placeholder="password"
+         name="password" [(ngModel)]="password" required />
+        <input type="submit" class="fadeIn fourth" placeholder="Login"/>
+
       </form>
   
       <!-- Remind Passowrd -->
       <div id="formFooter">
-        <a class="underlineHover" href="#">Forgot Password?</a>
-      </div>
+        <a class="underlineHover" href="#">¿Olvido su password?</a>
+
+        <!--<a class="underlineHover" href="#">Registrarse</a> -->
   
+      </div>
+      </div>
     </div>
   </div>
 </body>

@@ -1,18 +1,27 @@
+/*
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Interface.java to edit this template
+ */
 package com.proyecto.Edgar.Interface;
 
 import com.proyecto.Edgar.Entity.Persona;
 import java.util.List;
 
+/**
+ *
+ * @author USURIO
+ */
+
 public interface IPersonaService {
-    // Traer lista personas
+    //Traer Lista de Personas
     public List<Persona> getPersona();
     
-    //Guardar objeto persona
-    public void savePersona(Persona persona);
-    
-    //Eliminar objeto por id
-    public void deletePersona(Long id);
-    
-    //Buscar persona por id
-    public Persona findPersona(Long id);
+    //Guardar Persona
+   public void savePersona(Persona persona);
+   
+   //Eliminar persona por id
+   public void deletePersona(Long id);
+   
+   //Buscar una persona por ID
+   public Persona findPersona(Long id);
 }

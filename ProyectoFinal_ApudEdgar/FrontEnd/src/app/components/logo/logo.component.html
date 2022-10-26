@@ -24,7 +24,8 @@
                     ><i class="fab fa-instagram fa-lg"></i
                     ></a>
                 <!-- Login -->
-                    <button class="red" type="button" class="btn btn-outline-dark" (click)="login()" >Log In</button>
+                    <button class="red" type="button" class="btn btn-outline-dark" (click)="login()" *ngIf="!isLogged">LogIn</button>
+                    <button class="red" type="button" class="btn btn-outline-dark" (click)="onLogOut()" *ngIf="isLogged">LogOut</button>
             
         </div>
     </div>
