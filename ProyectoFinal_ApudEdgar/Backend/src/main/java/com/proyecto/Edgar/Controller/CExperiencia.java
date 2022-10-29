@@ -29,7 +29,7 @@ import org.springframework.web.bind.annotation.PutMapping;
  */
 @RestController
 @RequestMapping("/explab")
-@CrossOrigin(origins = "http://localhost:4200")
+@CrossOrigin(origins = "https://freedg-f4f04.web.app")
 public class CExperiencia {
 
     @Autowired

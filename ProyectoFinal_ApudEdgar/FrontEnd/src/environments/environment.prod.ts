@@ -8,5 +8,6 @@ export const environment = {
     authDomain: 'edgar-93a75.firebaseapp.com',
     messagingSenderId: '1097640348928',
   },
-  production: true
+  production: true,
+  URL:'https://bkdedg.herokuapp.com/'
 };

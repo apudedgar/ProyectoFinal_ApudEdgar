@@ -8,7 +8,7 @@ import { Educacion } from '../model/educacion';
   providedIn: 'root'
 })
 export class EducacionService {
-  educacionURL=environment.URL+'educacion/';
+  educacionURL='https://bkdedg.herokuapp.com/educacion/';
   constructor(private httpClient:HttpClient) { }
 
   public lista():Observable<Educacion[]>{

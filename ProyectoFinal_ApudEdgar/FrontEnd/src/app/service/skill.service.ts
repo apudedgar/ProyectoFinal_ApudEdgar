@@ -8,7 +8,7 @@ import { Skill } from '../model/skill';
   providedIn: 'root'
 })
 export class SkillService {
-  skURL=environment.URL+'skill/'
+  skURL='https://bkdedg.herokuapp.com/skill/'
   constructor(private httpClient:HttpClient) { }
   public lista():Observable<Skill[]>{
     return this.httpClient.get<Skill[]>(this.skURL+'lista');
