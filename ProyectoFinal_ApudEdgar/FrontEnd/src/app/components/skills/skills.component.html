@@ -1,140 +1,42 @@
 <div class="row">
 	<h1>Hard & Soft Skills</h1>
-	<div class="col-sm-2"></div>
+	<div class="col-lg-2">
+        <button type="button" class="btn btn-dark" routerLink="nuevaskill" *ngIf="isLogged">
+            Nueva Experiencia
+        </button>
+	</div>
 	<div class="row col-sm-8">
-		<div class="text-center col-sm-4 col-md-4 col-lg-4">    
+		<div class="text-center col-sm-4 col-md-4 col-lg-4" *ngFor="let Skill of sk">    
 			<circle-progress
-				[percent]="60"
-				[radius]="75"
+				[percent]= "(Skill.porcentaje)"
+				[radius]="85"
 				[outerStrokeWidth]="8"
 				[innerStrokeWidth]="4"
 				[outerStrokeColor]="'#000000'"
 				[innerStrokeColor]="'#e7e8ea'"
-				[outerStrokeGradient]="true"
+				[outerStrokeGradient]="false"
 				[animation]="true"
 				[animationDuration]="1000"
-				[showSubtitle]="false"
 				[clockwise]="false"
 				[showUnits]="false"
 				[toFixed]="0"
-				[subtitle]="'60'"
+				[showTitle]="false"
+				[subtitle]="(Skill.nombre)"
+				[showSubtitle]="true"
+				[subtitleFontSize]="'20'"
 				[subtitleColor]="'#000000'"
 				[imageSrc]="'../../../assets/html.png'"
 				[imageHeight]="75"
 				[imageWidth]="75"
-				[showImage]="true"
+				[showImage]="false"
+				
 			></circle-progress>
+			<br>
+			<button class="btn btn-dark bi bi-pen" routerLink="/editskill/{{Skill.id}}" *ngIf="isLogged"></button>
+			<button class="btn btn-dark bi bi-trash" (click)="delete(Skill.id)" *ngIf="isLogged"></button>
 		</div>
-		<div class="text-center col-sm-4 col-md-4 col-lg-4">    
-			<circle-progress
-				[percent]="60"
-				[radius]="75"
-				[outerStrokeWidth]="8"
-				[innerStrokeWidth]="4"
-				[outerStrokeColor]="'#000000'"
-				[innerStrokeColor]="'#e7e8ea'"
-				[animation]="true"
-				[animationDuration]="1000"
-				[showSubtitle]="false"
-				[clockwise]="false"
-				[showUnits]="false"
-				[toFixed]="0"
-				[subtitle]="'60'"
-				[subtitleColor]="'#000000'"
-				[imageSrc]="'../../../assets/html.png'"
-				[imageHeight]="75"
-				[imageWidth]="75"
-				[showImage]="true"
-			></circle-progress>
-		</div>
-		<div class="text-center col-sm-4 col-md-4 col-lg-4">    
-			<circle-progress
-				[percent]="60"
-				[radius]="75"
-				[outerStrokeWidth]="8"
-				[innerStrokeWidth]="4"
-				[outerStrokeColor]="'#000000'"
-				[innerStrokeColor]="'#e7e8ea'"
-				[animation]="true"
-				[animationDuration]="1000"
-				[showSubtitle]="false"
-				[clockwise]="false"
-				[showUnits]="false"
-				[toFixed]="0"
-				[subtitle]="'60'"
-				[subtitleColor]="'#000000'"
-				[imageSrc]="'../../../assets/html.png'"
-				[imageHeight]="75"
-				[imageWidth]="75"
-				[showImage]="true"
-			></circle-progress>
-		</div>
-		<div class="text-center col-sm-4 col-md-4 col-lg-4">    
-			<circle-progress
-				[percent]="60"
-				[radius]="75"
-				[outerStrokeWidth]="8"
-				[innerStrokeWidth]="4"
-				[outerStrokeColor]="'#000000'"
-				[innerStrokeColor]="'#e7e8ea'"
-				[animation]="true"
-				[animationDuration]="1000"
-				[showSubtitle]="false"
-				[clockwise]="false"
-				[showUnits]="false"
-				[toFixed]="0"
-				[subtitle]="'60'"
-				[subtitleColor]="'#000000'"
-				[imageSrc]="'../../../assets/html.png'"
-				[imageHeight]="75"
-				[imageWidth]="75"
-				[showImage]="true"
-			></circle-progress>
-		</div>
-		<div class="text-center col-sm-4 col-md-4 col-lg-4">    
-			<circle-progress
-				[percent]="60"
-				[radius]="75"
-				[outerStrokeWidth]="8"
-				[innerStrokeWidth]="4"
-				[outerStrokeColor]="'#000000'"
-				[innerStrokeColor]="'#e7e8ea'"
-				[animation]="true"
-				[animationDuration]="1000"
-				[showSubtitle]="false"
-				[clockwise]="false"
-				[showUnits]="false"
-				[toFixed]="0"
-				[subtitle]="'60'"
-				[subtitleColor]="'#000000'"
-				[imageSrc]="'../../../assets/html.png'"
-				[imageHeight]="75"
-				[imageWidth]="75"
-				[showImage]="true"
-			></circle-progress>
-		</div>
-		<div class="text-center col-sm-4 col-md-4 col-lg-4">    
-			<circle-progress
-				[percent]="60"
-				[radius]="75"
-				[outerStrokeWidth]="8"
-				[innerStrokeWidth]="4"
-				[outerStrokeColor]="'#000000'"
-				[innerStrokeColor]="'#e7e8ea'"
-				[animation]="true"
-				[animationDuration]="1000"
-				[showSubtitle]="false"
-				[clockwise]="false"
-				[showUnits]="false"
-				[toFixed]="0"
-				[subtitle]="'60'"
-				[subtitleColor]="'#000000'"
-				[imageSrc]="'../../../assets/html.png'"
-				[imageHeight]="75"
-				[imageWidth]="75"
-				[showImage]="true"
-			></circle-progress>
-		</div>
+		
+		
 	
 	</div>
 	<div class="col-sm-2"></div>

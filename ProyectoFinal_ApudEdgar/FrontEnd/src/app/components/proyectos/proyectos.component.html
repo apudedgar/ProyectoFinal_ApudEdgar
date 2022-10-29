@@ -1,27 +1,23 @@
-<div class="row">
+<div class="row" *ngIf="proyecto">
     <h1>Proyectos Realizados</h1>
-    <div class="row">
-        <div class="contenedor">
-            <div class="col-sm-12 col-md-3 col-lg-3 parte1 offset-md-1 offset-lg-1">
-                <img src="../../../assets/proyectos/pr1.jpg" alt="pr1" class="img-fluid img-proyecto align-middle">
-            </div>
-            <div class="col-sm-12 col-md-7 col-lg-7 parte2 offset-md-1 offset-lg-1 align-middle">
-                <h3>Proyecto1</h3>
-                <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Tenetur, sequi totam illo velit voluptatum dicta nihil eaque id aut atque blanditiis repudiandae quo consectetur autem. Optio ea in unde accusamus.</p>
-            </div>
-
-        </div>
+    <div class="col-lg-2">
+        <button type="button" class="btn btn-dark" routerLink="/nuevoproyecto" *ngIf="isLogged">
+            Agregar Proyecto
+        </button>
     </div>
     <div class="row">
-        <div class="contenedor">
-            <div class="col-sm-12 col-md-3 col-lg-3 parte1 offset-md-1 offset-lg-1">
-                <img src="../../../assets/proyectos/pr1.jpg" alt="pr1" class="img-fluid img-proyecto align-middle">
+        <div class="contenedor" *ngFor="let Proyecto of proyecto">
+            
+                <img id="imgP" width="200px" height='200px' [src]='Proyecto?.imgP' class="img-fluid img-proyecto align-middle">
+            <br><br>
+                <h3>{{Proyecto?.nombreP}}</h3>
+                
+                <p>{{Proyecto?.descripcionP}}</p>
+           
+            <div *ngIf="isLogged" class="col-sm-12 col-md-1 col-lg-1 parte3 offset-md-1 offset-lg-1 align-middle">
+                <button class="btn btn-dark bi bi-pen" routerLink="/editproyecto/{{Proyecto.id}}"></button>
+                <button class="btn btn-dark bi bi-trash" (click)="delete(Proyecto.id)"></button>
             </div>
-            <div class="col-sm-12 col-md-7 col-lg-7 parte2 offset-md-1 offset-lg-1 align-middle">
-                <h3>Proyecto2</h3>
-                <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Tenetur, sequi totam illo velit voluptatum dicta nihil eaque id aut atque blanditiis repudiandae quo consectetur autem. Optio ea in unde accusamus.</p>
-            </div>
-
         </div>
     </div>
 </div>

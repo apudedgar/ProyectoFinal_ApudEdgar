@@ -1,0 +1,21 @@
+<body>
+    <div class="container wrapper fadeInDown"*ngIf="sk">
+        <div id="formContent">
+            <div>
+                <form #f="ngForm" (ngSubmit)="onUpdate()" novalidate >
+                    <br>
+                    <h4 class="titulo">Actualizar datos Skill</h4> <br>
+                    <input type="text" id="nombre" name="nombre" class="fadeIn first" placeholder="Tipo de Skill" [(ngModel)]="sk.nombre" required />
+                        <input type="text" id="porcentaje" name="porcentaje" class="fadeIn second" placeholder="Porcentaje de Conocimiento" [(ngModel)]="sk.porcentaje" required />
+                 <br>
+
+                    <input type="submit" class="fadeIn third" value="Guardar datos actualizados"/>
+                    <a routerLink="/.."type="button" class="fadeIn fourth" >Cancelar</a>
+                    <br>
+                    
+
+                </form>
+            </div>
+        </div>
+    </div>
+</body>

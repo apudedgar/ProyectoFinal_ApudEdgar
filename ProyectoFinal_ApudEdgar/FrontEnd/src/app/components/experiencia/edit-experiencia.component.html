@@ -1,4 +1,4 @@
-<div class="container"*ngIf="expLab">
+<!--<div class="container"*ngIf="expLab">
     <div class="row">
         <div>
             <form (ngSubmit)="onUpdate()" novalidate #f="ngForm">
@@ -16,4 +16,24 @@
             </form>
         </div>
     </div>
-</div>
+</div>-->
+
+<body>
+    <div class="container wrapper fadeInDown" *ngIf="expLab">
+        <div id="formContent">
+            <div>
+                <form #f="ngForm" (ngSubmit)="onUpdate()" novalidate >
+                    <br>
+                    <h4 class="titulo">Actualizar Experiencia</h4> <br>
+                    <input type="text" id="nombreE" name="nombreE" class="fadeIn first" placeholder="Nombre de Proyecto" [(ngModel)]="expLab.nombreE" required />
+                    <input type="text" id="descripcionE" name="descripcionE" class="fadeIn second" placeholder="Nombre de Proyecto" [(ngModel)]="expLab.descripcionE" required />
+                    <br>
+                    <input type="submit" class="fadeIn third" value="Guardar datos actualizados"/>
+                  
+                    <a routerLink="/.."type="button" class="fadeIn fourth" >Cancelar</a>
+                    <br>      <br>   <br>                 
+                </form>
+            </div>
+        </div>
+    </div>
+</body>

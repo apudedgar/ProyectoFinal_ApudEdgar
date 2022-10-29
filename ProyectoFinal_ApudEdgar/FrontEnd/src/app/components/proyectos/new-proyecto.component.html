@@ -1,0 +1,31 @@
+<body>
+    <div class="container wrapper fadeInDown">
+        <div id="formContent">
+            <div>
+                <form #f="ngForm" (ngSubmit)="onCreate()" novalidate >
+                    <br>
+                    <h4 class="titulo">Cargar nuevo proyecto</h4> <br>
+                    <input type="text" id="nombreP" name="nombreP" class="fadeIn first" placeholder="Nombre de Proyecto"
+                        [(ngModel)]="nombreP" required />
+                    <input type="text" id="descripcionP" class="fadeIn second" placeholder="Descripcion del proyecto"
+                        name="descripcionP" [(ngModel)]="descripcionP" required />
+                    <br>
+                    <br>
+                    <input type="file" class="fadeIn third" id="imgP" name="imgP" (change)="uploadImageV($event)"
+                        accept=".jpg,.jpeg,.png">
+                        <br><br>
+                        <p class="fadeIn third">*Antes de guardar, espere a que se muestre la imagen que seleccionó</p>
+                    
+                    <input type="submit" class="fadeIn fourth" value="Guardar nuevo proyecto"/>
+                    <a routerLink="/.."type="button" class="fadeIn fourth" >Cancelar</a>
+                    <br>
+                    
+                    <div class="imagen">
+                        <img [src]="imageService.url" width="200px" alt="">
+                        <br>                    <br>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</body>

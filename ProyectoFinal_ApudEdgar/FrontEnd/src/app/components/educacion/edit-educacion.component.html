@@ -1,4 +1,4 @@
-<div class="container"*ngIf="educacion">
+<!--<div class="container"*ngIf="educacion">
     <div class="row">
         <div>
             <form (ngSubmit)="onUpdate()" novalidate #f="ngForm">
@@ -20,4 +20,24 @@
             </form>
         </div>
     </div>
-</div>
+</div>-->
+<body>
+    <div class="container wrapper fadeInDown" *ngIf="educacion">
+        <div id="formContent">
+            <div>
+                <form #f="ngForm" (ngSubmit)="onUpdate()" novalidate >
+                    <br>
+                    <h4 class="titulo">Actualizar Curso/Estudio</h4> <br>
+                    <input type="text" id="nombreE" name="nombreE" class="fadeIn first" placeholder="Curso/Estudio Realizado" [(ngModel)]="educacion.nombreE" required />
+                    <input type="text" id="anioE" name="anioE" class="fadeIn second" placeholder="Año/s de cursado Ej:2020-2021" [(ngModel)]="educacion.anioE" required />
+                    <input type="text" id="descripcionE" name="descripcionE" class="fadeIn third" placeholder="Descripcion" [(ngModel)]="educacion.descripcionE" required />
+                    <br>
+                    <input type="submit" class="fadeIn fourth" value="Guardar datos actualizados"/>
+                  
+                    <a routerLink="/.."type="button" class="fadeIn fourth" >Cancelar</a>
+                    <br>      <br>   <br>                 
+                </form>
+            </div>
+        </div>
+    </div>
+</body>

@@ -1,4 +1,4 @@
-<div class="container">
+<!--<div class="container">
     <div class="row">
         <div>
             <form (ngSubmit)="onCreate()" novalidate #f="ngForm">
@@ -16,4 +16,26 @@
             </form>
         </div>
     </div>
-</div>
+</div>-->
+<body>
+    <div class="container wrapper fadeInDown">
+        <div id="formContent">
+            <div>
+                <form #f="ngForm" (ngSubmit)="onCreate()" novalidate>
+                    <br>
+                    <h4 class="titulo">Cargar Experiencia Laboral</h4> <br>
+                    <input type="text" id="nombreE" name="nombreE" class="fadeIn first"
+                        placeholder="Experiencia laboral" [(ngModel)]="nombreE" required />
+                    <input type="text" id="descripcionE" class="fadeIn third" placeholder="Descripcion"
+                        name="descripcionE" [(ngModel)]="descripcionE" required />
+                    <br>
+                    <br>
+                    <input type="submit" class="fadeIn fourth" value="Guardar"/>
+                    <a routerLink="/.."type="button" class="fadeIn fourth" >Cancelar</a>
+                    <br>
+                    <br>
+                </form>
+            </div>
+        </div>
+    </div>
+</body>

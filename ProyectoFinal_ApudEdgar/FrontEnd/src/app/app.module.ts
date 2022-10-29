@@ -22,6 +22,15 @@ import { NewExperienciaComponent } from './components/experiencia/new-experienci
 import { EditExperienciaComponent } from './components/experiencia/edit-experiencia.component';
 import { NewEducacionComponent } from './components/educacion/new-educacion.component';
 import { EditEducacionComponent } from './components/educacion/edit-educacion.component';
+import { NewSkillComponent } from './components/skills/new-skill.component';
+import { EditSkillComponent } from './components/skills/edit-skill.component';
+import { EditAcercaDComponent } from './components/acerca-d/edit-acerca-d.component';
+import { initializeApp,provideFirebaseApp } from '@angular/fire/app';
+import { environment } from '../environments/environment';
+import { provideStorage,getStorage } from '@angular/fire/storage';
+import { EditProyectoComponent } from './components/proyectos/edit-proyecto.component';
+import { NewProyectoComponent } from './components/proyectos/new-proyecto.component';
+
 
 
 @NgModule({
@@ -41,7 +50,12 @@ import { EditEducacionComponent } from './components/educacion/edit-educacion.co
     NewExperienciaComponent,
     EditExperienciaComponent,
     NewEducacionComponent,
-    EditEducacionComponent
+    EditEducacionComponent,
+    NewSkillComponent,
+    EditSkillComponent,
+    EditAcercaDComponent,
+    EditProyectoComponent,
+    NewProyectoComponent
   ],
   imports: [
     BrowserModule,
@@ -50,7 +64,7 @@ import { EditEducacionComponent } from './components/educacion/edit-educacion.co
     NgCircleProgressModule.forRoot({}),
     HttpClientModule,
     FormsModule , 
-    ReactiveFormsModule
+    ReactiveFormsModule, provideFirebaseApp(() => initializeApp(environment.firebase)), provideStorage(() => getStorage())
   ],
   providers: [
     interceptorProvider

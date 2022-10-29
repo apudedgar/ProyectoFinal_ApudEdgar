@@ -1,0 +1,42 @@
+<!--<div class="container">
+    <div class="row">
+        <div>
+            <form (ngSubmit)="onCreate()" novalidate #f="ngForm">
+                <div class="form-group">
+                    <label for="nombre">Skill</label>
+                    <input type="text" class="form-control" id="nombre" name="nombre" [(ngModel)]="nombre" required>
+                </div>
+                <div class="form-group">
+                    <label for="porcentaje">Porcentaje de Conocimiento</label>
+                    <input type="text" class="form-control" id="porcentaje" name="porcentaje" [(ngModel)]="porcentaje"
+                        required>
+                </div>
+                <button class="btn btn-primary">
+                    Agregar Skill
+                </button>
+            </form>
+        </div>
+    </div>
+</div>-->
+<body>
+<div class="container wrapper fadeInDown">
+        <div id="formContent">
+            <div>
+                <form #f="ngForm" (ngSubmit)="onCreate()" novalidate>
+                    <br>
+                    <h4 class="titulo">Cargar Hard y Soft Skills</h4> <br>
+                    <input type="text" id="nombre" name="nombre" class="fadeIn first"
+                        placeholder="Tipo de Skill" [(ngModel)]="nombre" required />
+                    <input type="text" id="porcentaje" class="fadeIn third" placeholder="Porcentaje de Conocimiento"
+                        name="porcentaje" [(ngModel)]="porcentaje" required />
+                    <br>
+                    <br>
+                    <input type="submit" class="fadeIn fourth" value="Guardar nueva Skill"/>
+                    <a routerLink="/.."type="button" class="fadeIn fourth" >Cancelar</a>
+                    <br>
+                    <br>
+                </form>
+            </div>
+        </div>
+    </div>
+</body>
